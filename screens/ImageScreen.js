@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Image, Text, StyleSheet, Platform, TouchableOpacity, Linking } from 'react-native';
+import { View, Image, Text, StyleSheet, TouchableOpacity, Linking } from 'react-native';
 
 export default function ImageScreen({ route, navigation }) {
     const { image, title, owner } = route.params;
@@ -55,7 +55,6 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         marginBottom: 20,
         resizeMode: 'cover',
-        
     },
     title: {
         fontSize: 24,
