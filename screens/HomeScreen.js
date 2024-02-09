@@ -1,30 +1,37 @@
-import React from 'react'
-import { Text,StyleSheet } from 'react-native'
-import { createStackNavigator } from '@react-navigation/stack';
-import { GalleryScreen } from './GalleryScreen';
-import ImageScreen from './ImageScreen';
-
-
+import React from "react";
+import { StyleSheet, View, Dimensions } from "react-native";
+import { createStackNavigator } from "@react-navigation/stack";
+import { GalleryScreen } from "./GalleryScreen";
+import ImageScreen from "./ImageScreen";
 
 const HomeStack = createStackNavigator();
-export  function HomeScreen({navigation}) {
-
-    
+const windowWidth = Dimensions.get("window").width;
+export function HomeScreen({ navigation, isDarkMode }) {
   return (
-    
-    <HomeStack.Navigator initialRouteName='Gallery' >
-      <HomeStack.Screen name="Gallery" component={GalleryScreen} options={{headerShown:false}} />
-      <HomeStack.Screen name="Image" component={ImageScreen} options={{headerShown:false}}/>
-    </HomeStack.Navigator>
-  )
+    <View style={[styles.container, isDarkMode && styles.darkModeContainer]}>
+      <HomeStack.Navigator
+        initialRouteName="Gallery"
+        screenOptions={{ headerShown: false }}
+      >
+        <HomeStack.Screen name="Gallery">
+          {({ navigation }) => (
+            <GalleryScreen navigation={navigation} isDarkMode={isDarkMode} />
+          )}
+        </HomeStack.Screen>
+        <HomeStack.Screen name="Image">
+          {({ route }) => <ImageScreen route={route} isDarkMode={isDarkMode} />}
+        </HomeStack.Screen>
+      </HomeStack.Navigator>
+    </View>
+  );
 }
 
 const styles = StyleSheet.create({
-
-  image:{
-
-      margin:2,
-      height:118,
-      width:118
-  }
-})
+  container: {
+    flex: 1,
+    backgroundColor: "#F4F4F4",
+  },
+  darkModeContainer: {
+    backgroundColor: "#333333",
+  },
+});

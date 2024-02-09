@@ -4,7 +4,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const windowWidth = Dimensions.get('window').width;
 
-export function GalleryScreen({ navigation }) {
+export function GalleryScreen({ navigation, isDarkMode }) {
     const [Data, setData] = useState([]);
 
     useEffect(() => {
@@ -39,15 +39,15 @@ export function GalleryScreen({ navigation }) {
         <TouchableOpacity onPress={() => {
             navigation.navigate('Home', { screen: 'Image', params: { image: item.url, title: item.title, owner: item.owner } });
         }}>
-            <View style={styles.itemContainer}>
+            <View style={[styles.itemContainer, isDarkMode && styles.darkModeItemContainer]}>
                 <Image source={{ uri: item.url }} style={styles.image} />
-                <Text numberOfLines={1} ellipsizeMode="tail" style={styles.title}>{item.title}</Text>
+                <Text numberOfLines={1} ellipsizeMode="tail" style={[styles.title, isDarkMode && styles.darkModeTitle]}>{item.title}</Text>
             </View>
         </TouchableOpacity>
     );
 
     return (
-        <View style={styles.container}>
+        <View style={[styles.container, isDarkMode && styles.darkModeContainer]}>
             <FlatList
                 data={Data}
                 renderItem={renderItem}
@@ -64,6 +64,9 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: '#F4F4F4',
     },
+    darkModeContainer: {
+        backgroundColor: '#333',
+    },
     flatListContent: {
         padding: 10,
     },
@@ -75,6 +78,9 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         width: windowWidth / 2 - 20, // Adjusted width based on available screen width and margins
         marginBottom: 20,
+    },
+    darkModeItemContainer: {
+        backgroundColor: '#555',
     },
     image: {
         width: '100%', // Image width set to 100%
@@ -88,5 +94,8 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         color: '#333333',
         maxWidth: '100%', // Maximum width of the title
+    },
+    darkModeTitle: {
+        color: '#EEE',
     },
 });
