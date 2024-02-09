@@ -1,11 +1,8 @@
 import React from 'react'
 import { Text,StyleSheet } from 'react-native'
-import { useIsFocused } from '@react-navigation/native';
-import { useFocusEffect } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { GalleryScreen } from './GalleryScreen';
 import ImageScreen from './ImageScreen';
-import { StackActions } from '@react-navigation/native';
 
 
 
@@ -24,10 +21,10 @@ export  function HomeScreen({navigation}) {
 
 const styles = StyleSheet.create({
 
-    image:{
+  image:{
 
-        margin:2,
-        height:118,
-        width:118
-    }
+      margin:2,
+      height:118,
+      width:118
+  }
 })
