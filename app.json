@@ -1,10 +1,11 @@
 {
   "expo": {
-    "name": "Banao_RN_Task2",
+    "name": "image gallery",
     "slug": "Banao_RN_Task2",
+    "description": "image gallery app",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/splash.png",
     "userInterfaceStyle": "light",
     "splash": {
       "image": "./assets/splash.png",
@@ -19,12 +20,18 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "../assets/splash.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.dindayal2310.Banao_RN_Task2"
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/splash.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "e4349fc4-4845-4fc1-936e-b1a4892bf018"
+      }
     }
   }
 }
