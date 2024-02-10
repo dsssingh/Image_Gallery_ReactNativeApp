@@ -5,7 +5,7 @@ import { Ionicons } from '@expo/vector-icons';
 export default function AboutScreen({ isDarkMode }) {
     const openGitHubLink = () => {
         // Add your GitHub repository link here
-        const githubLink = 'https://github.com/yourusername/yourrepository';
+        const githubLink = 'https://github.com/Dindayalsingh04/Image_Gallery_ReactNativeApp';
         // Use Linking to open the GitHub link
         // Linking.openURL(githubLink);
         console.log('GitHub link:', githubLink);
