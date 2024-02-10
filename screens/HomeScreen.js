@@ -3,7 +3,6 @@ import { StyleSheet, View, Dimensions } from "react-native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { GalleryScreen } from "./GalleryScreen";
 import ImageScreen from "./ImageScreen";
-
 const HomeStack = createStackNavigator();
 const windowWidth = Dimensions.get("window").width;
 export function HomeScreen({ navigation, isDarkMode }) {
@@ -19,7 +18,13 @@ export function HomeScreen({ navigation, isDarkMode }) {
           )}
         </HomeStack.Screen>
         <HomeStack.Screen name="Image">
-          {({ route }) => <ImageScreen route={route} isDarkMode={isDarkMode} />}
+          {({ route }) => (
+            <ImageScreen
+              route={route}
+              navigation={navigation}
+              isDarkMode={isDarkMode}
+            />
+          )}
         </HomeStack.Screen>
       </HomeStack.Navigator>
     </View>
