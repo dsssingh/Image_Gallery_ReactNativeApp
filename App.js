@@ -1,4 +1,4 @@
-import { Ionicons } from "@expo/vector-icons"; // Import Ionicons from @expo/vector-icons
+import { Ionicons } from "@expo/vector-icons"; 
 import React, { useState } from "react";
 import {
   NavigationContainer,
@@ -19,7 +19,7 @@ function App() {
     setIsDarkMode(!isDarkMode);
   };
 
-  // Define light and dark themes,default theme is light
+  // default theme is light
   const theme = isDarkMode ? DarkTheme : DefaultTheme;
 
   return (
@@ -49,14 +49,14 @@ const styles = StyleSheet.create({
     backgroundColor: "#007AFF",
     padding: 10,
     borderRadius: 5,
-    flexDirection: "row", // Align icon and text horizontally
-    alignItems: "center", // Center icon and text vertically
+    flexDirection: "row", 
+    alignItems: "center", 
   },
   darkModeButtonText: {
     color: "#fff",
     fontSize: 16,
     fontWeight: "bold",
-    marginLeft: 5, // Add some space between the icon and text
+    marginLeft: 5, 
   },
 });
 

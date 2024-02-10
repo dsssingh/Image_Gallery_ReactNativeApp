@@ -12,7 +12,7 @@ export default function ImageScreen({ route, navigation, isDarkMode }) {
   const { image, title, owner } = route.params;
 
   const handleDownload = () => {
-    // Validate the image URL
+    // Vlidate the image URL
     if (typeof image === "string" && image.trim() !== "") {
       const imageUrl = image;
       Linking.openURL(imageUrl);

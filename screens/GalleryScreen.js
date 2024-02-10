@@ -92,7 +92,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#F4F4F4",
   },
   darkModeContainer: {
-    backgroundColor: "#333",
+    backgroundColor: "#000",
   },
   flatListContent: {
     padding: 10,
@@ -103,14 +103,14 @@ const styles = StyleSheet.create({
     margin: 5,
     padding: 10,
     alignItems: "center",
-    width: windowWidth / 2 - 20, // Adjusted width based on available screen width and margins
+    width: windowWidth / 2 - 20,
     marginBottom: 20,
   },
   darkModeItemContainer: {
     backgroundColor: "#555",
   },
   image: {
-    width: "100%", // Image width set to 100%
+    width: "100%",
     height: 150,
     borderRadius: 10,
     marginBottom: 10,
@@ -120,7 +120,7 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     textAlign: "center",
     color: "#333333",
-    maxWidth: "100%", // Maximum width of the title
+    maxWidth: "100%",
   },
   darkModeTitle: {
     color: "#EEE",
