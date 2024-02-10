@@ -1,13 +1,11 @@
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, Linking } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 
 export default function AboutScreen({ isDarkMode }) {
     const openGitHubLink = () => {
-        // Add your GitHub repository link here
         const githubLink = 'https://github.com/Dindayalsingh04/Image_Gallery_ReactNativeApp';
-        // Use Linking to open the GitHub link
-        // Linking.openURL(githubLink);
+        Linking.openURL(githubLink);
         console.log('GitHub link:', githubLink);
     };
 
@@ -17,7 +15,7 @@ export default function AboutScreen({ isDarkMode }) {
             <Text style={[styles.description, isDarkMode && styles.darkModeText]}>
                 This app is made as a task in Banao Technologies React Native Internship Program
             </Text>
-            <TouchableOpacity onPress={openGitHubLink} style={styles.githubButton}>
+            <TouchableOpacity onPress={openGitHubLink} style={[styles.githubButton, isDarkMode && styles.darkModeButton]}>
                 <Ionicons name="logo-github" size={24} color="#fff" />
                 <Text style={styles.githubButtonText}>View Code on GitHub</Text>
             </TouchableOpacity>
@@ -64,5 +62,8 @@ const styles = StyleSheet.create({
     },
     darkModeText: {
         color: '#fff',
+    },
+    darkModeButton: {
+        backgroundColor: '#555', // Change button color in dark mode
     },
 });
