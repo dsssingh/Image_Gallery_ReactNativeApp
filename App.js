@@ -1,4 +1,4 @@
-import { Ionicons } from "@expo/vector-icons"; 
+import { Ionicons } from "@expo/vector-icons";
 import React, { useState } from "react";
 import {
   NavigationContainer,
@@ -9,6 +9,7 @@ import { createDrawerNavigator } from "@react-navigation/drawer";
 import { TouchableOpacity, Text, StyleSheet } from "react-native";
 import "react-native-gesture-handler";
 import { HomeScreen } from "./screens/HomeScreen";
+import AboutScreen from "./screens/AboutScreen";
 
 const Drawer = createDrawerNavigator();
 
@@ -28,6 +29,9 @@ function App() {
         <Drawer.Screen name="Home">
           {(props) => <HomeScreen {...props} isDarkMode={isDarkMode} />}
         </Drawer.Screen>
+        <Drawer.Screen name="About">
+          {(props) => <AboutScreen {...props} isDarkMode={isDarkMode} />}
+        </Drawer.Screen>
       </Drawer.Navigator>
       <TouchableOpacity onPress={toggleDarkMode} style={styles.darkModeButton}>
         <Ionicons
@@ -35,7 +39,6 @@ function App() {
           size={20}
           color="#fff"
         />
-        {/* <Text style={styles.darkModeButtonText}>Dark Mode</Text> */}
       </TouchableOpacity>
     </NavigationContainer>
   );
@@ -49,14 +52,14 @@ const styles = StyleSheet.create({
     backgroundColor: "#007AFF",
     padding: 10,
     borderRadius: 5,
-    flexDirection: "row", 
-    alignItems: "center", 
+    flexDirection: "row",
+    alignItems: "center",
   },
   darkModeButtonText: {
     color: "#fff",
     fontSize: 16,
     fontWeight: "bold",
-    marginLeft: 5, 
+    marginLeft: 5,
   },
 });
 
