@@ -8,4 +8,4 @@
   2).Dark mode                                                                                                                                                               
   3).Download button for images                                                                                                                                              
   4).About page added for details of code.                                                                                                                                
-  
+---
